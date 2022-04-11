@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Users } from './users';
 
 @Component({
   selector: 'app-root',
@@ -14,4 +15,5 @@ export class AppComponent {
     'Machine Learning',
     'Artificial Intelligence',
   ];
+  userModel = new Users('Harsh' ,'kaushikharsh86@gmail.com', 3232324525 , '', 'morning' , true);
 }

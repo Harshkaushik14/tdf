@@ -1,51 +1,81 @@
-<div class="container-fluid">
+<div class="container-fluid mb-5">
   <h1>Bootcamp Enrollment Form</h1>
-<form #userForm ="ngForm">
-{{ userForm.value | json}}
+  <form #userForm="ngForm">
+    {{ userForm.value | json }}
+    <hr />
 
-  <div class="form-group mb-4">
-    <label>Name</label>
-    <input name="userName" ngModel type="text" class="form-control">
-  </div>
+    {{ userModel | json }}
+    <div class="form-group mb-4">
+      <label>Name</label>
+      <input
+        name="userName"
+        [ngModel]="userModel.name"
+        type="text"
+        class="form-control"
+      />
+    </div>
 
-  <div class="form-group mb-4">
-    <label >Email</label>
-    <input name="userEmail" ngModel type="text" class="form-control">
-  </div>
+    <div class="form-group mb-4">
+      <label>Email</label>
+      <input
+        name="userEmail"
+        [(ngModel)]="userModel.email"
+        type="text"
+        class="form-control"
+      />
+    </div>
 
-  <div class="form-group mb-4">
-    <label >Phone Number</label>
-    <input name="userNumber" ngModel type="tel" class="form-control">
-  </div>
+    <div class="form-group mb-4">
+      <label>Phone Number</label>
+      <input
+        name="userNumber"
+        [ngModel]="userModel.phone"
+        type="tel"
+        class="form-control"
+      />
+    </div>
 
-  <div class="form-group mb-4">
-    <select class="custom-select" name="topic" ngModel>
-      <option selected>I am interested in</option>
-      <option *ngFor="let topic of topics">{{topic}}</option>
-    </select>
-  </div>
+    <div class="form-group mb-4">
+      <select class="custom-select" name="topic" [ngModel]="userModel.topic">
+        <option value="">I am interested in</option>
+        <option *ngFor="let topic of topics">{{ topic }}</option>
+      </select>
+    </div>
 
-  <div class="mb-3 pt-3">
-<label>Time Prefrence</label>
-<div class="form-check">
- <input type="radio" ngModel class="form-check-input" name="timePrefrence" value="morning">
- <label class="form-check-label">Morning (9 am - 10 am)</label>
-</div>
+    <div class="mb-3 pt-3">
+      <label>Time Prefrence</label>
+      <div class="form-check">
+        <input
+          type="radio"
+          [ngModel]="userModel.timePrefrence"
+          class="form-check-input"
+          name="timePrefrence"
+          value="morning"
+        />
+        <label class="form-check-label">Morning (9 am - 10 am)</label>
+      </div>
 
-<div class="form-check">
-  <input type="radio" ngModel class="form-check-input" name="timePrefrence" value="evening">
-  <label class="form-check-label">Evening (9 pm - 10 pm)</label>
- </div>
-  </div>
+      <div class="form-check">
+        <input
+          type="radio"
+          [ngModel]="userModel.timePrefrence"
+          class="form-check-input"
+          name="timePrefrence"
+          value="evening"
+        />
+        <label class="form-check-label">Evening (9 pm - 10 pm)</label>
+      </div>
+    </div>
 
-  <div class="form-check mb-3">
-<input class="form-check-input" ngModel name="subscribe" type="checkbox">
-<label class="form-check-label">
-  Send me News & updates..
-</label>
-
-  </div>
-  <button class="btn btn-primary" type="submit">Submit </button>
-</form>
-
+    <div class="form-check mb-3">
+      <input
+        class="form-check-input"
+        [ngModel]="userModel.subscribe"
+        name="subscribe"
+        type="checkbox"
+      />
+      <label class="form-check-label"> Send me News & updates.. </label>
+    </div>
+    <button class="btn btn-primary" type="submit">Submit</button>
+  </form>
 </div>
