@@ -9,7 +9,7 @@
       <label>Name</label>
       <input
         name="userName"
-        [ngModel]="userModel.name"
+        [(ngModel)]="userModel.name"
         type="text"
         class="form-control"
       />
@@ -29,14 +29,14 @@
       <label>Phone Number</label>
       <input
         name="userNumber"
-        [ngModel]="userModel.phone"
+        [(ngModel)]="userModel.phone"
         type="tel"
         class="form-control"
       />
     </div>
 
     <div class="form-group mb-4">
-      <select class="custom-select" name="topic" [ngModel]="userModel.topic">
+      <select class="custom-select" name="topic" [(ngModel)]="userModel.topic">
         <option value="">I am interested in</option>
         <option *ngFor="let topic of topics">{{ topic }}</option>
       </select>
@@ -47,7 +47,7 @@
       <div class="form-check">
         <input
           type="radio"
-          [ngModel]="userModel.timePrefrence"
+          [(ngModel)]="userModel.timePrefrence"
           class="form-check-input"
           name="timePrefrence"
           value="morning"
@@ -58,7 +58,7 @@
       <div class="form-check">
         <input
           type="radio"
-          [ngModel]="userModel.timePrefrence"
+          [(ngModel)]="userModel.timePrefrence"
           class="form-check-input"
           name="timePrefrence"
           value="evening"
@@ -70,7 +70,7 @@
     <div class="form-check mb-3">
       <input
         class="form-check-input"
-        [ngModel]="userModel.subscribe"
+        [(ngModel)]="userModel.subscribe"
         name="subscribe"
         type="checkbox"
       />
