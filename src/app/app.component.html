@@ -8,12 +8,15 @@
     <div class="form-group mb-4">
       <label>Name</label>
       <input
+      required
+      #name
         name="userName"
         [(ngModel)]="userModel.name"
         type="text"
         class="form-control"
       />
     </div>
+    {{ name.className}}
 
     <div class="form-group mb-4">
       <label>Email</label>
