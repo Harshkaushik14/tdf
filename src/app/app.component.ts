@@ -15,5 +15,5 @@ export class AppComponent {
     'Machine Learning',
     'Artificial Intelligence',
   ];
-  userModel = new Users('Harsh' ,'kaushikharsh86@gmail.com', 3232324525 , '', 'morning' , true);
+  userModel = new Users('' ,'kaushikharsh86@gmail.com', 3232324525 , '', 'morning' , true);
 }

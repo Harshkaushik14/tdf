@@ -12,7 +12,7 @@
         name="userName"
         [(ngModel)]="userModel.name"
         type="text"
-        [class.is-invalid]="name.invalid"
+        [class.is-invalid]="name.invalid && name.touched"
         class="form-control"
       />
     </div>
