@@ -1,22 +1,22 @@
 <div class="container-fluid mb-5">
   <h1>Bootcamp Enrollment Form</h1>
   <form #userForm="ngForm">
-    {{ userForm.value | json }}
+ 
     <hr />
 
-    {{ userModel | json }}
     <div class="form-group mb-4">
       <label>Name</label>
       <input
       required
-      #name
+      #name="ngModel"
         name="userName"
         [(ngModel)]="userModel.name"
         type="text"
+        [class.is-invalid]="name.invalid"
         class="form-control"
       />
     </div>
-    {{ name.className}}
+
 
     <div class="form-group mb-4">
       <label>Email</label>
