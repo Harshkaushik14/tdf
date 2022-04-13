@@ -7,6 +7,7 @@ import { Users } from './users';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
+  title= "tdf";
   topics = [
     'Web Development',
     'Mobile App Development',
@@ -15,5 +16,16 @@ export class AppComponent {
     'Machine Learning',
     'Artificial Intelligence',
   ];
-  userModel = new Users('' ,'kaushikharsh86@gmail.com', 3232324525 , '', 'morning' , true);
+
+  topicHasError = true;
+  userModel = new Users('' ,'kaushikharsh86@gmail.com', 3232324525 , 'default', 'morning' , true);
+
+  validateTopic(value: any){
+    if(value === 'default'){
+this.topicHasError = true;
+    }else{
+      this.topicHasError = false;
+    }
+
+  }
 }
